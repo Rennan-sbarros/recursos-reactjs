@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# React Hooks
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Trabalhando com States e Effects no ReactJS
 
-## Available Scripts
 
-In the project directory, you can run:
+##### **Introdução aos Hooks**
 
-### `yarn start`
+Foi implementado ao React a partir da versão 16.8. Seu objetivo é solucionar problemas como: Dificuldade na reutilização de códigos, componentes complexos e confusão com classes. Utilizando funções especiais que utilizam recursos do React.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+------
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+##### Agora vamos mostrar o funcionamento do useState e useEffect
 
-### `yarn test`
+Primeiro, vamos abordar a criação de um componente sem e com utilização de Hooks para que possamos comparar e termos uma melhor visão das diferenças. Os exemplos serão baseados em contagens simples, onde é possível aumentar e diminuir um determinado número.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+###### Como funciona um componente SEM Hooks?
 
-### `yarn build`
+No código, visualize o componente chamado: Counter-SemHooks.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="C:\Users\renna\Desktop\SemHook.png" style="zoom:150%;" />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Podemos analisar o código e observar que um componente sem Hooks, não explora 100% do poder que o React oferece. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Observando, teremos sempre que - na linha nº 6  - inserir, manualmente, o 'document.getElementById' para buscar o elemento e atualizá-lo. Isto dificultará nosso tempo de codificação e a probabilidade de cometer erros aumentará se tivermos um componente com diversas ações. 
 
-### `yarn eject`
+###### Como funciona um componente COM Hooks?
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Usando o useState: Este Hook cria um componente que usa estado, que terá memória. Teremos como retorno um par de valores: O valor do estado atual e uma função que atualiza o estado.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   <img src="C:\Users\renna\Desktop\SemHook.png" style="zoom:150%;" />Para exemplicar, vamos visualizar o código: 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   Na linha nº9 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   - O valor definido como 'quantity' = guarda e armazena todas as informações, representando o estado atual, o valor que será manipulado pelo 'setQuantity'.
+   - O 'setQuantity' = Pega e atualiza.
+   - No 'UseState(1)' = O valor inicial do estado, ou seja, a contagem irá iniciar em 1.
 
-## Learn More
+   Para manipularmos o valor do 'quantity', podemos simplesmente executar:
+   `<button onClick={() => setQuantity(quantity + 1)}>Aumentar</button>`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Usando o useEffect: Uso de efeito. Como funciona? Pense em um remédio, especificamente, nos efeitos colaterais. Após ingerir o remédio, o corpo vai gerir um evento de efeito colateral. Ou seja, para cada evento, teremos um ou mais efeitos colaterais. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   Temos 3 opções lógicas para implementá-los: Sem dependências, dependências vazias ou com dependências.
 
-### Code Splitting
+   - Sem dependência: Não colocamos o array ao final da função para que o efeito seja executado após cada renderização. É uma opção pouco utilizada em situações, com excessão da necessidade de se ter uma problemática onde tenha a necessidade de fazer calcúlos pesados e complexos após cada renderização.
+   - Com dependências vazias: Insere o array vazio ao final da função para que o efeito seja executado apenas uma única vez.
+   - Com dependências(Utilizado): Com o array preenchido, sempre que o valor passado no array alterar o efeito será executado.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   Exemplo que utilizaremos: Seguindo o exemplo do ifood, ao clicar em acrescentar ou diminuir a quantidade de um determinado produto, o valor do produto será alterado, simultaneamente. E a cada produto inserido, finjam que o produto seja uma mini esfihas de frango e terá um valor de 2 reais. 
 
-### Analyzing the Bundle Size
+   ![](C:\Users\renna\Desktop\Ifood.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   - useEffect: 
+     - O nosso useEffect pegará a quantidade(value) e multiplicará por 2(valor da mini esfirra de frango), todas as vezes que o value for alterado. 
+   - Função down:
+     - 1º: O sinal de menos(-) mudará de cor se a quantidade(value) for menor ou igual a 1.
+     - 2º: Se a quantidade(value) for maior que 0, será pego o estado atual para subtrair por 1.
+   - Função Up:
+     - 1º: Será pego a quantidade(value) e acrescentará mais 1.
+     - 2º: A cada vez que a função up for usada, a cor voltará ao padrão.
 
-### Making a Progressive Web App
+------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+##### Observações:
 
-### Advanced Configuration
+- Por mais que tenha uma função de atualização do estado, nada impede que tenha outras funções para manipular o estado. No nosso código, temos a função down e up, mas cada uma com suas particularidades.
+- Uma boa prática, é sempre utilizar set na propriedade do estado. [quantity, setQuantity].
+- O que vimos? A utilização dos Hooks não precisa ser apenas para reservar ou atualizar um numero, podemos, por exemplo, usar o css para tornar as funções dinâmicas. 
+- Referências:
+  - https://www.garagemdigital.io/react-hooks-o-que-sao/
+  - https://pt-br.reactjs.org/docs/hooks-overview.html
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
