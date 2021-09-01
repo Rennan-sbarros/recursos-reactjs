@@ -49,7 +49,7 @@ Observando, teremos sempre que - na linha nº 6  - inserir, manualmente, o 'docu
 
    Exemplo que utilizaremos: Seguindo o exemplo do ifood, ao clicar em acrescentar ou diminuir a quantidade de um determinado produto, o valor do produto será alterado,              simultaneamente. E a cada produto inserido, finjam que o produto seja uma mini esfihas de frango e terá um valor de 2 reais. 
 
-   <img src=" https://github.com/Rennan-sbarros/rennan-sbarros/blob/main/Diversos/Print-Hooks/Ifood.png" style="zoom:150%;" />
+   <img src="https://github.com/Rennan-sbarros/rennan-sbarros/blob/main/Diversos/Print-Hooks/Ifood.png" style="zoom:150%;" />
 
 - **useEffect:** O nosso useEffect pegará a quantidade(value) e multiplicará por 2(valor da mini esfirra de frango), todas as vezes que o value for alterado.
 - **Função down:**
