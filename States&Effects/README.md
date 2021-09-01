@@ -27,7 +27,7 @@ Observando, teremos sempre que - na linha nº 6  - inserir, manualmente, o 'docu
 **1. Usando o useState:** Este Hook cria um componente que usa estado, que terá memória. Teremos como retorno um par de valores: O valor do estado atual e uma função que atualiza o estado.
 
    <img src="https://github.com/Rennan-sbarros/rennan-sbarros/blob/main/Diversos/Print-Hooks/ComHooks.png" style="zoom:150%;" />
-   
+
    Para exemplicar, vamos visualizar o código: 
    Na linha nº9 
 
@@ -36,7 +36,7 @@ Observando, teremos sempre que - na linha nº 6  - inserir, manualmente, o 'docu
    - No 'UseState(1)' = O valor inicial do estado, ou seja, a contagem irá iniciar em 1.
 
    Para manipularmos o valor do 'quantity', podemos simplesmente executar:
-   
+
    `<button onClick={() => setQuantity(quantity + 1)}>Aumentar</button>`
 
 **2. Usando o useEffect:** Uso de efeito. Como funciona? Pense em um remédio, especificamente, nos efeitos colaterais. Após ingerir o remédio, o corpo vai gerir um evento de efeito colateral. Ou seja, para cada evento, teremos um ou mais efeitos colaterais. 
@@ -50,16 +50,14 @@ Observando, teremos sempre que - na linha nº 6  - inserir, manualmente, o 'docu
    Exemplo que utilizaremos: Seguindo o exemplo do ifood, ao clicar em acrescentar ou diminuir a quantidade de um determinado produto, o valor do produto será alterado,              simultaneamente. E a cada produto inserido, finjam que o produto seja uma mini esfihas de frango e terá um valor de 2 reais. 
 
    <img src=" https://github.com/Rennan-sbarros/rennan-sbarros/blob/main/Diversos/Print-Hooks/Ifood.png" style="zoom:150%;" />
-  
 
- **- useEffect:**
-     - O nosso useEffect pegará a quantidade(value) e multiplicará por 2(valor da mini esfirra de frango), todas as vezes que o value for alterado. 
- **- Função down:**
-     - 1º: O sinal de menos(-) mudará de cor se a quantidade(value) for menor ou igual a 1.
-     - 2º: Se a quantidade(value) for maior que 0, será pego o estado atual para subtrair por 1.
- **- Função Up:**
-     - 1º: Será pego a quantidade(value) e acrescentará mais 1.
-     - 2º: A cada vez que a função up for usada, a cor voltará ao padrão.
+- **useEffect:** O nosso useEffect pegará a quantidade(value) e multiplicará por 2(valor da mini esfirra de frango), todas as vezes que o value for alterado.
+- **Função down:**
+  - 1º: O sinal de menos(-) mudará de cor se a quantidade(value) for menor ou igual a 1.
+  - 2º: Se a quantidade(value) for maior que 0, será pego o estado atual para subtrair por 1.
+- **Função Up:**
+  - 1º: Será pego a quantidade(value) e acrescentará mais 1.
+  - 2º: A cada vez que a função up for usada, a cor voltará ao padrão.
 
 ------
 
@@ -71,4 +69,3 @@ Observando, teremos sempre que - na linha nº 6  - inserir, manualmente, o 'docu
 - Referências:
   - https://www.garagemdigital.io/react-hooks-o-que-sao/
   - https://pt-br.reactjs.org/docs/hooks-overview.html
-
