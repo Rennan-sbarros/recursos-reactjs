@@ -24,7 +24,7 @@ Observando, teremos sempre que - na linha nº 6  - inserir, manualmente, o 'docu
 
 ## **Como funciona um componente COM Hooks?**
 
-**1.** Usando o useState: Este Hook cria um componente que usa estado, que terá memória. Teremos como retorno um par de valores: O valor do estado atual e uma função que atualiza o estado.
+**1. Usando o useState:** Este Hook cria um componente que usa estado, que terá memória. Teremos como retorno um par de valores: O valor do estado atual e uma função que atualiza o estado.
 
    <img src="https://github.com/Rennan-sbarros/rennan-sbarros/blob/main/Diversos/Print-Hooks/ComHooks.png" style="zoom:150%;" />
    
@@ -36,9 +36,10 @@ Observando, teremos sempre que - na linha nº 6  - inserir, manualmente, o 'docu
    - No 'UseState(1)' = O valor inicial do estado, ou seja, a contagem irá iniciar em 1.
 
    Para manipularmos o valor do 'quantity', podemos simplesmente executar:
+   
    `<button onClick={() => setQuantity(quantity + 1)}>Aumentar</button>`
 
-**2.** Usando o useEffect: Uso de efeito. Como funciona? Pense em um remédio, especificamente, nos efeitos colaterais. Após ingerir o remédio, o corpo vai gerir um evento de efeito colateral. Ou seja, para cada evento, teremos um ou mais efeitos colaterais. 
+**2. Usando o useEffect:** Uso de efeito. Como funciona? Pense em um remédio, especificamente, nos efeitos colaterais. Após ingerir o remédio, o corpo vai gerir um evento de efeito colateral. Ou seja, para cada evento, teremos um ou mais efeitos colaterais. 
 
    Temos 3 opções lógicas para implementá-los: Sem dependências, dependências vazias ou com dependências.
 
@@ -51,12 +52,12 @@ Observando, teremos sempre que - na linha nº 6  - inserir, manualmente, o 'docu
    <img src=" https://github.com/Rennan-sbarros/rennan-sbarros/blob/main/Diversos/Print-Hooks/Ifood.png" style="zoom:150%;" />
   
 
-   **- useEffect:**
+ **- useEffect:**
      - O nosso useEffect pegará a quantidade(value) e multiplicará por 2(valor da mini esfirra de frango), todas as vezes que o value for alterado. 
-   **- Função down:**
+ **- Função down:**
      - 1º: O sinal de menos(-) mudará de cor se a quantidade(value) for menor ou igual a 1.
      - 2º: Se a quantidade(value) for maior que 0, será pego o estado atual para subtrair por 1.
-   **- Função Up:**
+ **- Função Up:**
      - 1º: Será pego a quantidade(value) e acrescentará mais 1.
      - 2º: A cada vez que a função up for usada, a cor voltará ao padrão.
 
