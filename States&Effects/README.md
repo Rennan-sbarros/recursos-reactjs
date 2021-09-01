@@ -1,18 +1,18 @@
-# React Hooks
+# **React Hooks**
 
-### Trabalhando com States e Effects no ReactJS
+## **Trabalhando com States e Effects no ReactJS**
 
-### **Introdução aos Hooks**
+## **Introdução aos Hooks**
 
 Foi implementado ao React a partir da versão 16.8. Seu objetivo é solucionar problemas como: Dificuldade na reutilização de códigos, componentes complexos e confusão com classes. Utilizando funções especiais que utilizam recursos do React.
 
 ------
 
-### Agora vamos mostrar o funcionamento do useState e useEffect
+## **Agora vamos mostrar o funcionamento do useState e useEffect**
 
 Primeiro, vamos abordar a criação de um componente sem e com utilização de Hooks para que possamos comparar e termos uma melhor visão das diferenças. Os exemplos serão baseados em contagens simples, onde é possível aumentar e diminuir um determinado número.
 
-#### **Como funciona um componente SEM Hooks?**
+## **Como funciona um componente SEM Hooks?**
 
 No código, visualize o componente chamado: Counter-SemHooks.
 
@@ -22,9 +22,9 @@ Podemos analisar o código e observar que um componente sem Hooks, não explora 
 
 Observando, teremos sempre que - na linha nº 6  - inserir, manualmente, o 'document.getElementById' para buscar o elemento e atualizá-lo. Isto dificultará nosso tempo de codificação e a probabilidade de cometer erros aumentará se tivermos um componente com diversas ações. 
 
-#### **Como funciona um componente COM Hooks?**
+## **Como funciona um componente COM Hooks?**
 
-1. Usando o useState: Este Hook cria um componente que usa estado, que terá memória. Teremos como retorno um par de valores: O valor do estado atual e uma função que atualiza o estado.
+**1.** Usando o useState: Este Hook cria um componente que usa estado, que terá memória. Teremos como retorno um par de valores: O valor do estado atual e uma função que atualiza o estado.
 
    <img src="https://github.com/Rennan-sbarros/rennan-sbarros/blob/main/Diversos/Print-Hooks/ComHooks.png" style="zoom:150%;" />
    
@@ -38,7 +38,7 @@ Observando, teremos sempre que - na linha nº 6  - inserir, manualmente, o 'docu
    Para manipularmos o valor do 'quantity', podemos simplesmente executar:
    `<button onClick={() => setQuantity(quantity + 1)}>Aumentar</button>`
 
-2. Usando o useEffect: Uso de efeito. Como funciona? Pense em um remédio, especificamente, nos efeitos colaterais. Após ingerir o remédio, o corpo vai gerir um evento de efeito colateral. Ou seja, para cada evento, teremos um ou mais efeitos colaterais. 
+**2.** Usando o useEffect: Uso de efeito. Como funciona? Pense em um remédio, especificamente, nos efeitos colaterais. Após ingerir o remédio, o corpo vai gerir um evento de efeito colateral. Ou seja, para cada evento, teremos um ou mais efeitos colaterais. 
 
    Temos 3 opções lógicas para implementá-los: Sem dependências, dependências vazias ou com dependências.
 
@@ -51,18 +51,18 @@ Observando, teremos sempre que - na linha nº 6  - inserir, manualmente, o 'docu
    <img src=" https://github.com/Rennan-sbarros/rennan-sbarros/blob/main/Diversos/Print-Hooks/Ifood.png" style="zoom:150%;" />
   
 
-   - useEffect: 
+   **- useEffect:**
      - O nosso useEffect pegará a quantidade(value) e multiplicará por 2(valor da mini esfirra de frango), todas as vezes que o value for alterado. 
-   - Função down:
+   **- Função down:**
      - 1º: O sinal de menos(-) mudará de cor se a quantidade(value) for menor ou igual a 1.
      - 2º: Se a quantidade(value) for maior que 0, será pego o estado atual para subtrair por 1.
-   - Função Up:
+   **- Função Up:**
      - 1º: Será pego a quantidade(value) e acrescentará mais 1.
      - 2º: A cada vez que a função up for usada, a cor voltará ao padrão.
 
 ------
 
-### Observações:
+## **Observações:**
 
 - Por mais que tenha uma função de atualização do estado, nada impede que tenha outras funções para manipular o estado. No nosso código, temos a função down e up, mas cada uma com suas particularidades.
 - Uma boa prática, é sempre utilizar set na propriedade do estado. [quantity, setQuantity].
